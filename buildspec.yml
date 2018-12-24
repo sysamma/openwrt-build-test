@@ -10,6 +10,7 @@ phases:
       - adduser --disabled-password --gecos "" openwrt
   build:
     commands:
+      - pwd
       - su - openwrt
       - cd /home/openwrt
       - echo Build started on `date`
