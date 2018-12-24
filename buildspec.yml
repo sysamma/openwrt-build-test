@@ -1,5 +1,7 @@
 version: 0.2
 
+run-as: openwrt
+
 phases:
   install:
     commands:
