@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - apt-get update -y
+      - apt-get install -y build-essential gawk unzip ncurses-dev
+  build:
+    commands:
+      - echo Build started on `date`
+      - git clone https://www.github.com/openwrt/openwrt
+      - cd openwrt
+      - ./scripts/feeds update -a
+      - ./scripts/feeds install -a
+      - cp ../erx-config ./.config
+      - make
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - hello.out
