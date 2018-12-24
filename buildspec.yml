@@ -7,19 +7,13 @@ phases:
     commands:
       - apt-get update -y
       - apt-get install -y git-core build-essential libssl-dev libncurses5-dev unzip gawk zlib1g-dev
-      - adduser --disabled-password --gecos "" openwrt
   build:
     commands:
-      - pwd
-      - su - openwrt
-      - cd /home/openwrt
       - echo Build started on `date`
       - git clone https://www.github.com/openwrt/openwrt
       - cd openwrt
       - ./scripts/feeds update -a
       - ./scripts/feeds install -a
-      - ls
-      - ls ../
       - cp ../erx-config ./.config
       - make -j1 V=s
   post_build:
