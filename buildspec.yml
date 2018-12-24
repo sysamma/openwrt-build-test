@@ -11,6 +11,7 @@ phases:
   build:
     run-as: openwrt
     commands:
+      - cd ~
       - echo Build started on `date`
       - git clone https://www.github.com/openwrt/openwrt
       - cd openwrt
