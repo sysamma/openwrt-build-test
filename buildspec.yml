@@ -7,7 +7,7 @@ phases:
     commands:
       - apt-get update -y
       - apt-get install -y git-core build-essential libssl-dev libncurses5-dev unzip gawk zlib1g-dev
-      - adduser openwrt
+      - adduser --disabled-password --gecos "" openwrt
   build:
     run-as: openwrt
     commands:
