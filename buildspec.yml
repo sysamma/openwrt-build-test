@@ -17,7 +17,7 @@ phases:
       - cd openwrt
       - ./scripts/feeds update -a
       - ./scripts/feeds install -a
-      - cp ../erx-config ./.config
+      - cp ./erx-config ./.config
       - make -j1 V=s
   post_build:
     commands:
