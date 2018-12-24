@@ -15,7 +15,7 @@ phases:
       - ./scripts/feeds update -a
       - ./scripts/feeds install -a
       - cp ../erx-config ./.config
-      - make -j17
+      - make -j9
   post_build:
     commands:
       - echo Build completed on `date`
