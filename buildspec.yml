@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - apt-get update -y
-      - apt-get install -y build-essential gawk unzip ncurses-dev
+      - apt-get install -y git-core build-essential libssl-dev libncurses5-dev unzip gawk zlib1g-dev
   build:
     commands:
       - echo Build started on `date`
