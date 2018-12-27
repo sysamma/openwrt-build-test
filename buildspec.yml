@@ -10,15 +10,16 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - git clone https://www.github.com/openwrt/openwrt
+      - git clone https://www.github.com/openwrt/openwrt -b openwrt-18.06
       - cd openwrt
       - ./scripts/feeds update -a
       - ./scripts/feeds install -a
       - cp ../erx-config ./.config
-      - make -j9
+      - make -j5
   post_build:
     commands:
       - echo Build completed on `date`
 artifacts:
   files:
-    - bin/**/*
+    - bin/targets/ramips/mt7621/openwrt-ramips-mt7621-ubnt-erx-initramfs-factory.tar
+    - openwrt/bin/targets/ramips/mt7621/openwrt-ramips-mt7621-ubnt-erx-initramfs-factory.tar
