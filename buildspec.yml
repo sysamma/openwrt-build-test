@@ -15,6 +15,7 @@ phases:
       - ./scripts/feeds update -a
       - ./scripts/feeds install -a
       - cp ../erx-config ./.config
+      - cat .config
       - make -j1
   post_build:
     commands:
